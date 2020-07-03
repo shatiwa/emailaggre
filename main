@@ -1,0 +1,40 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+ class Solution {
+
+
+    private static final Scanner sc = new Scanner(System.in);
+    private String companyname = "sideproject";
+
+    public static void main(String[] args) {
+        ArrayList<emailaggr>  k=new ArrayList<emailaggr>();
+        int k1=1;
+        while(k1==1)
+        {
+            System.out.println("Enter the employee details");
+            System.out.println("Enter the firstname");
+            String f=sc.nextLine();
+            System.out.println("Enter the lastname");
+            String l=sc.nextLine();
+            System.out.println("Enter the department");
+            String d=sc.nextLine();
+            emailaggr obj=new emailaggr(f,l,d);
+            obj.randompassword();
+            obj.emailgenerator();
+            k.add(obj);
+            System.out.println("Enter the '1' to enter more details else press any other number");
+            k1=sc.nextInt();
+            sc.nextLine();
+        }
+        for(int i=0;i<k.size();i++)
+        {
+            k.get(i).print();
+        }
+    }
+}
